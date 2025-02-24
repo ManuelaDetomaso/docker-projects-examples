@@ -1,6 +1,6 @@
 GitHub Repo to get started with Docker (Dockerfiles, docker-compose.yaml) with basic API examples in Flask.
 
-##Repos 
+## Repos 
 
 - **basicdockerproject**: get started with Docker and Flask APIs. The README inside displays a lot of relevant information about Docker, APIs and MongoDB.
 - **bankapidockerproject**: more complex Flask APIs interacting with MongoDB to store and recover data
