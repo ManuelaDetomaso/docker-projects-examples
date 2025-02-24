@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: './web'
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./web:/app # Bind Mount: Mounts ./web (local) into /app (container), so code updates reflect instantly.
+    working_dir: /app  # Ensures the container is running in the correct director
+    depends_on:
+    - db
+    environment:
+      - FLASK_ENV=development  # Enables auto-reload for Flask
+      - PYTHONUNBUFFERED=1  # Ensures logs appear immediately
+    command: flask run --host=0.0.0.0 --port=5000  # Ensures Flask runs with auto-reload
+  db:
+    build: './db'

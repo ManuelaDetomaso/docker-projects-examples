@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: './web'  # The Dockerfile is inside the 'web' folder
+    volumes:
+      - ./web:/usr/src/app  # Mount the 'web' folder for live changes
+    ports:
+      - "5000:5000"  # Map container's port 5000 to host
+    depends_on:
+      - db
+  db:
+    build: './db'
